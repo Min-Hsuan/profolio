@@ -1,0 +1,36 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap');
+
+@tailwind utilities;
+
+
+* {
+  font-family: 'Noto Sans TC', sans-serif;
+}
+body{
+  box-sizing: content-box;
+  background-color: var(--bg-dark-gray)
+}
+
+.card:hover {
+  @apply shadow-orange-300;
+}
+
+.card:focus {
+  @apply outline-2 outline-orange-300;
+}
+.card:hover img{
+  @apply brightness-50
+}
+/* .card:hover text{
+  @apply opacity-100
+} */
+/* Lightbox 動畫 */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+[role="dialog"] {
+  animation: fadeIn 0.3s ease-in-out;
+}

@@ -1,5 +1,5 @@
 
-import './App.css'
+import './style.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import WebPage from './pages/Webpage';
 import { useState, useEffect } from 'react';
@@ -35,8 +35,8 @@ function App() {
     fetchData() 
   },[])
 
-  const switchMode = (newModeId)=>{
-    setModeId(newModeId)
+  const switchMode = (delta)=>{
+    setModeId((prev) => (prev + delta + 2) % 2);
   }
   const openLightbox = (card)=>{
     setSelectedCard(card)
@@ -47,7 +47,7 @@ function App() {
     document.body.overflow = 'auto'
   }
   return (
-    <div className="">
+    <div>
      {isLoading? <Loading/>
      : <div className="content p-4 md:p-8">
       <SwitchButton modeId={modeId} switchMode={switchMode}/>
