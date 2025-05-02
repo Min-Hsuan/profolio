@@ -40,19 +40,20 @@ function App() {
   }
   const openLightbox = (card)=>{
     setSelectedCard(card)
-    document.body.overflow = 'hidden'
+    document.body.style.overflow = 'hidden'
+
   }
   const closeLightbox = ()=>{
     setSelectedCard(null)
-    document.body.overflow = 'auto'
+    document.body.style.overflow = 'auto'
   }
   return (
     <div>
      {isLoading? <Loading/>
-     : <div className="content p-4 md:p-8">
-      <SwitchButton modeId={modeId} switchMode={switchMode}/>
-      {modeId === 0 && <WebPage webCards={webCards} />}
-      {modeId === 1 && <GraphicPage graphicCards={graphicCards} selectedCard={selectedCard} openLightbox={openLightbox} closeLightbox={closeLightbox} />}
+     : <div className="content p-4 md:p-8 min-xl:w-7xl mx-auto">
+        <SwitchButton modeId={modeId} switchMode={switchMode}/>
+        {modeId === 0 && <WebPage webCards={webCards} />}
+        {modeId === 1 && <GraphicPage graphicCards={graphicCards} selectedCard={selectedCard} openLightbox={openLightbox} closeLightbox={closeLightbox} />}
 
      </div>}
     </div>

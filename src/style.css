@@ -1,7 +1,5 @@
-@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap');
-
-@tailwind utilities;
+@import "tailwindcss";
 
 
 * {
@@ -22,15 +20,25 @@ body{
 .card:hover img{
   @apply brightness-50
 }
-/* .card:hover text{
-  @apply opacity-100
-} */
+
 /* Lightbox 動畫 */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
 
+@keyframes movingRight {
+  from { left: 0 ; }
+  to { left: 50% ; }
+}
+@keyframes movingLeft {
+  from { left: 50% ; }
+  to { left: 0 ; }
+}
 [role="dialog"] {
   animation: fadeIn 0.3s ease-in-out;
+}
+
+.grid::after {
+  display: none;
 }
