@@ -12,4 +12,5 @@ export default defineConfig({
     minify: 'esbuild',
     sourcemap: true,
   },
+  base: '/profolio/',
 })
